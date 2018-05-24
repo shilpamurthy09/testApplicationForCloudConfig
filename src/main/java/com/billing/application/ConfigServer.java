@@ -5,6 +5,7 @@ import java.util.Arrays;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.dao.PersistenceExceptionTranslationAutoConfiguration;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.cloud.config.server.EnableConfigServer;
 import org.springframework.context.ApplicationContext;
@@ -15,7 +16,7 @@ import org.springframework.context.ApplicationContext;
 
 @SpringBootApplication
 @EnableConfigServer
-@EnableAutoConfiguration(exclude={DataSourceAutoConfiguration.class})
+@EnableAutoConfiguration(exclude={DataSourceAutoConfiguration.class,PersistenceExceptionTranslationAutoConfiguration.class})
 public class ConfigServer {
 
     public static void main(String[] args) {
